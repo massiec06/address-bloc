@@ -49,7 +49,7 @@ class MenuController
    end
 
    def entry_n_submenu
-     count = 0
+     count = 
      print "Entry number to view: "
      selection = gets.chomp.to_i
 
