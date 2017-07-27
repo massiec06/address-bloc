@@ -5,6 +5,7 @@ class MenuController
 
   def initialize
     @address_book = AddressBook.new
+    @count = 0
   end
 
   def main_menu
@@ -37,6 +38,7 @@ class MenuController
        when 5
          system "clear"
          entry_n_submenu
+         @count = 0
          main_menu
        when 6
          puts "Good-bye!"
@@ -49,7 +51,6 @@ class MenuController
    end
 
    def entry_n_submenu
-     count = 
      print "Entry number to view: "
      selection = gets.chomp.to_i
 
@@ -60,8 +61,8 @@ class MenuController
        gets.chomp
        system "clear"
      else
-       if count < 3
-         count += 1
+       if @count < 3
+         @count += 1
          puts "#{selection} is not a valid input"
          entry_n_submenu
        else
